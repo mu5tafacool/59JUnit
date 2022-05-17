@@ -26,7 +26,8 @@ public class Q4 {
 
 */
 
-    //Not :https://www.guru99.com/chrome-options-desiredcapabilities.html
+    //Not : https://www.guru99.com/chrome-options-desiredcapabilities.html
+
     /*
     note :
     JavaScriptExecutor nedir?

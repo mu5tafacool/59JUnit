@@ -20,4 +20,39 @@ public class Q2 {
         mexicoLinkTest => Linkin gorunutulenip goruntulenmedigini dogrulayin
  */
 
+    static WebDriver driver;
+    @BeforeClass
+    public static void setUp(){
+        WebDriverManager.chromedriver().setup();
+
+    }
+    @Before
+    public void testtenOnce(){
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver.get("https://www.bestbuy.com");
+    }
+    @Test
+    public void titleTest(){
+        Assert.assertTrue("title Best kelimesi icermiyor", driver.getTitle().contains("Best"));
+    }
+
+    @Test
+    public void  logoTest(){
+       // WebElement logoBestBuy = driver.findElement(By.xpath("//img[@class ='logo']"));
+        WebElement helloHEading = driver.findElement(By.xpath("//div[@class ='heading']"));
+        WebElement logoBestBuy = driver.findElement(RelativeLocator.with(By.tagName("img")).above(helloHEading));
+        Assert.assertTrue(logoBestBuy.isDisplayed());
+    }
+
+    @Test
+    public void mexicoLinkTest(){
+
+    }
+    @After
+    public void kapat(){
+        driver.close();
+    }
+
 }
