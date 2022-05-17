@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 
-public class Q4 {
+public class Q4_interview {
     /*
     ...Exercise4...
     https://www.teknosa.com/ adresine gidiniz
