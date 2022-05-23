@@ -1,17 +1,13 @@
 package practice;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.time.Duration;
-import java.util.List;
-
 public class Q7_DropDown {
+    // go to url : https://www.jqueryscript.net/demo/Drop-Down-Combo-Tree/
+    //-->Task1 Find Dropdown on Multi Selection
+    //-->Task2 Find  all Dropdown Elements on page
+    //-->Task3 printout DropDown Elements' number
+    //-->Task4 choose dropdown elements and printout dropdown elements' name  until choise 6
+
+
 
 
 }
