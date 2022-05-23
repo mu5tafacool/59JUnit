@@ -1,6 +1,6 @@
 package practice;
 
-public class Q7_DropDown {
+public class Q07_DropDown {
     // go to url : https://www.jqueryscript.net/demo/Drop-Down-Combo-Tree/
     //-->Task1 Find Dropdown on Multi Selection
     //-->Task2 Find  all Dropdown Elements on page

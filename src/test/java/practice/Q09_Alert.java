@@ -1,6 +1,6 @@
 package practice;
 
-public class Q9_Alert   {
+public class Q09_Alert {
 
     //    go to url :http://demo.automationtesting.in/Alerts.html
     //    click  "Alert with OK" and click 'click the button to display an alert box:'

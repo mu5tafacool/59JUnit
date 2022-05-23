@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 import java.util.List;
 
-public class Q3_CssLocator_MethodCreation {
+public class Q03_CssLocator_MethodCreation {
 
     /*
      ...Exercise3...

@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class Q5_Title_UrlTest {
+public class Q05_Title_UrlTest {
 
     /*
        ...Exercise5...

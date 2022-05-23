@@ -1,7 +1,7 @@
 package practice;
 
 
-public class Q8_ExplicitlyWait   {
+public class Q08_ExplicitlyWait {
 
 
 /*
