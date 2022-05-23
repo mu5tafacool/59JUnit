@@ -14,6 +14,7 @@ public class C03_WebTables extends TestBase {
         // girisYap method'unu kullanarak sayafaya giris yapin
         // input olarak verilen satir sayisi ve sutun sayisi'na sahip
         // cell'deki text'i yazdirin
+
         int satir=3;
         int sutun=3;
         girisYap();
