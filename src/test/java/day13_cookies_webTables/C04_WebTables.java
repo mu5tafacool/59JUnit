@@ -96,8 +96,8 @@ public class C04_WebTables extends TestBase {
     }
 
     public void hucreYazdir(int satir, int sutun) {
-        String dinamikXpath="((//div[@class='rt-tr-group'])["+satir+"]//div[@class='rt-td'])["+sutun+"]";
-        System.out.println(driver.findElement(By.xpath(dinamikXpath)).getText());
+        WebElement istenenHucre = driver.findElement(By.xpath("(//div[@class='rt-tr-group'][" + satir + "]//div[@class='rt-td'])[" + sutun + "]"));
+        System.out.println(istenenHucre.getText());
 
     }
     
