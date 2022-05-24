@@ -48,7 +48,7 @@ public class Q03_CssLocator_MethodCreation {
         List<WebElement> buttonsDelete = driver.findElements(By.cssSelector("[onclick= 'deleteElement()']"));
         int sayac= 0;
 
-        for (WebElement w :buttonsDelete){ //siecegim webelemente click yapiyorum
+        for (WebElement w :buttonsDelete){ //silecegim webelemente click yapiyorum
             sayac ++;
             if(sayac>number){
                 break;
