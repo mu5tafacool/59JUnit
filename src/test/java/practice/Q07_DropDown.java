@@ -42,17 +42,11 @@ public class Q07_DropDown extends TestBase {
             String text = dropList.get(i).getText();
             System.out.println("text = " + text);
 
-            if(!text.isEmpty()){
-                dropList.get(i).click();
-            }
             if(text.equals("choice 6")){
                 dropList.get(i).click();
                 break;
             }
-
         }
-
     }
-
 
 }
