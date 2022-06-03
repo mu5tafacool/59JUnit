@@ -28,8 +28,8 @@ public class Q03_CssLocator_MethodCreation {
         driver.get("http://the-internet.herokuapp.com/add_remove_elements/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        createButtons(driver,100);
-        deleteButtonsAndValidate(driver,60);
+        createButtons(driver, 100);
+        deleteButtonsAndValidate(driver, 60);
 
     }
 
@@ -46,11 +46,11 @@ public class Q03_CssLocator_MethodCreation {
         int sizebeforeDelete = elements.size();
 
         List<WebElement> buttonsDelete = driver.findElements(By.cssSelector("[onclick= 'deleteElement()']"));
-        int sayac= 0;
+        int sayac = 0;
 
-        for (WebElement w :buttonsDelete){ //silecegim webelemente click yapiyorum
-            sayac ++;
-            if(sayac>number){
+        for (WebElement w : buttonsDelete) { //silecegim webelemente click yapiyorum
+            sayac++;
+            if (sayac > number) {
                 break;
             }
             w.click();
@@ -59,17 +59,14 @@ public class Q03_CssLocator_MethodCreation {
         List<WebElement> elementsAfter = driver.findElements(By.cssSelector("[onclick= 'deleteElement()']"));
         int sizeafterDelete = elementsAfter.size();//sildikten sonra kalanlar
 
-        if((sizebeforeDelete-number)==sizeafterDelete){
+        if ((sizebeforeDelete - number) == sizeafterDelete) {
             System.out.println("sizeafterDelete = " + sizeafterDelete);
             System.out.println("SUCCESS");
-        }else
+        } else
             System.out.println("FAIL!");
 
 
     }
-
-
-
 
 
 }
