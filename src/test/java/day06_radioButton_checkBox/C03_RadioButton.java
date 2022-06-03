@@ -14,20 +14,20 @@ import java.time.Duration;
 public class C03_RadioButton {
 
     WebDriver driver;
+
     //1. Bir class oluşturun : RadioButtonTest
     //2. Gerekli yapiyi olusturun ve aşağıdaki görevi tamamlayın.
     @Before
-    public void setUp(){
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
-        driver=new ChromeDriver();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
     }
 
     @After
-    public void tearDown(){
-       driver.close();
+    public void tearDown() {driver.close();
     }
 
     @Test
@@ -39,12 +39,12 @@ public class C03_RadioButton {
         //“Create an Account” button’una basin
         driver.findElement(By.xpath("//*[text()='Create new account']")).click();
         //“radio buttons” elementlerini locate edin
-        WebElement femaleButton=driver.findElement(By.xpath("//input[@value='1']"));
-        WebElement maleButton=driver.findElement(By.xpath("//input[@value='2']"));
-        WebElement customButton=driver.findElement(By.xpath("//input[@value='-1']"));
+        WebElement femaleButton = driver.findElement(By.xpath("//input[@value='1']"));
+        WebElement maleButton = driver.findElement(By.xpath("//input[@value='2']"));
+        WebElement customButton = driver.findElement(By.xpath("//input[@value='-1']"));
         //Secili degilse cinsiyet butonundan size uygun olani secin
         Thread.sleep(3000);
-        if (!maleButton.isSelected()){
+        if (!maleButton.isSelected()) {
             maleButton.click();
         }
 
@@ -52,8 +52,6 @@ public class C03_RadioButton {
 
 
     }
-
-
 
 
 }

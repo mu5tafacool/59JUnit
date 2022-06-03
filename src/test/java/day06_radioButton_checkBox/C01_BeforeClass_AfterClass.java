@@ -14,7 +14,7 @@ public class C01_BeforeClass_AfterClass {
     static WebDriver driver;
 
     @BeforeClass
-    public static void setUp(){
+    public static void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -22,24 +22,20 @@ public class C01_BeforeClass_AfterClass {
     }
 
     @AfterClass
-    public static void tearDown(){
-        driver.close();
-    }
+    public static void tearDown() {driver.close();}
 
     @Test
-    public void test01(){
+    public void test01() {
         // Before method call
         driver.get("https://www.amazon.com");
         // After method call
     }
+
     @Test
-    public void test02(){
-        driver.get("https://www.techproeducation.com");
-    }
+    public void test02() {driver.get("https://www.techproeducation.com");}
+
     @Test
-    public void test03(){
-        driver.get("https://www.facebook.com");
-    }
+    public void test03() {driver.get("https://www.facebook.com");}
 
 
 }

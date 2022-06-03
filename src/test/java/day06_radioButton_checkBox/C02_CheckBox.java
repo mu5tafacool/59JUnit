@@ -13,17 +13,19 @@ import java.time.Duration;
 
 public class C02_CheckBox {
     WebDriver driver;
+
     // 1. Bir class oluşturun : CheckBoxTest
     //2.Gerekli yapiyi olusturun ve aşağıdaki görevi tamamlayın.
     @Before
-    public void setUp(){
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
-        driver=new ChromeDriver();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
+
     @After
-    public void tearDown(){
+    public void tearDown() {
         driver.close();
     }
 
@@ -33,23 +35,20 @@ public class C02_CheckBox {
         //https://the-internet.herokuapp.com/checkboxes
         driver.get("https://the-internet.herokuapp.com/checkboxes");
         //b. Checkbox1 ve checkbox2 elementlerini locate edin.
-        WebElement checkBox1=driver.findElement(By.xpath("(//input[@type='checkbox'])[1]"));
-        WebElement checkBox2=driver.findElement(By.xpath("(//input[@type='checkbox'])[2]"));
+        WebElement checkBox1 = driver.findElement(By.xpath("(//input[@type='checkbox'])[1]"));
+        WebElement checkBox2 = driver.findElement(By.xpath("(//input[@type='checkbox'])[2]"));
         //c. Checkbox1 seçili değilse onay kutusunu tıklayın
         Thread.sleep(3000);
-        if (!checkBox1.isSelected()){
+        if (!checkBox1.isSelected()) {
             checkBox1.click();
         }
         //d. Checkbox2 seçili değilse onay kutusunu tıklayın
         Thread.sleep(3000);
-        if (!checkBox2.isSelected()){
+        if (!checkBox2.isSelected()) {
             checkBox2.click();
         }
         Thread.sleep(3000);
     }
-
-
-
 
 
 }

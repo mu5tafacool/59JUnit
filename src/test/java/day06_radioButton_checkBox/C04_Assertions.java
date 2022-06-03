@@ -14,21 +14,19 @@ public class C04_Assertions {
     WebDriver driver;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
-        driver=new ChromeDriver();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
     }
 
     @After
-    public void tearDown(){
-        driver.close();
-    }
+    public void tearDown() {driver.close();}
 
     @Test
-    public void test01(){
+    public void test01() {
         /* Eger Test method'umuzda hicbir test yoksa, test calistiktan sonra
            hic bir problemle karsilasilmadigini raporlamak icin "tests passed" yazisi cikar
 
@@ -48,9 +46,9 @@ public class C04_Assertions {
         }
 
  */
-        String expectedUrl="https://www.facebook.com";
-        String actualUrl=driver.getCurrentUrl();
-        Assert.assertEquals("Url beklenenden farkli",expectedUrl,actualUrl);
+        String expectedUrl = "https://www.facebook.com";
+        String actualUrl = driver.getCurrentUrl();
+        Assert.assertEquals("Url beklenenden farkli", expectedUrl, actualUrl);
         /*
         Assert ile yaptigimiz testlerde assertion failed olursa
         Java kodlarin calismasini durdurur ve Assert class'i
