@@ -28,24 +28,22 @@ public class C05_DropDownOptions {
     WebDriver driver;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
-        driver=new ChromeDriver();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
     }
 
     @After
-    public void tearDown(){
-        driver.quit();
-    }
+    public void tearDown() {driver.quit();}
 
     @Test
-    public void test01(){
+    public void test01() {
         driver.get("https://www.amazon.com");
-        WebElement ddm= driver.findElement(By.xpath("//select[@id='searchDropdownBox']"));
-        Select select= new Select(ddm);
+        WebElement ddm = driver.findElement(By.xpath("//select[@id='searchDropdownBox']"));
+        Select select = new Select(ddm);
         select.selectByVisibleText("Books");
 
         // bir dropdown ile calisiyorken, son secilen optiona'a ulasmak isterseniz
@@ -59,10 +57,10 @@ public class C05_DropDownOptions {
 
         List<WebElement> optionList = select.getOptions();
 
-        int actualOptionSayisi= optionList.size();
-        int expectedOptionsayisi=28;
+        int actualOptionSayisi = optionList.size();
+        int expectedOptionsayisi = 28;
 
-        Assert.assertEquals(expectedOptionsayisi,actualOptionSayisi);
+        Assert.assertEquals(expectedOptionsayisi, actualOptionSayisi);
 
     }
 

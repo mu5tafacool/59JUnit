@@ -24,18 +24,16 @@ public class C04_DropDownMenu {
     WebDriver driver;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
-        driver=new ChromeDriver();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
     }
 
     @After
-    public void tearDown(){
-        driver.quit();
-    }
+    public void tearDown() {driver.quit();}
 
     @Test
     public void test02() throws InterruptedException {
@@ -44,11 +42,11 @@ public class C04_DropDownMenu {
         // dropdown'dan bir option secmek icin 3 adim vardir
         // 1- dropdown'i locate edelim
 
-        WebElement dropDownMenu= driver.findElement(By.xpath("//select[@id='searchDropdownBox']"));
+        WebElement dropDownMenu = driver.findElement(By.xpath("//select[@id='searchDropdownBox']"));
 
         // 2- bir Select objesi olusturup
         //    parametre olarak bir onceki adimda locate ettigimiz ddm'yu girelim
-        Select select=new Select(dropDownMenu);
+        Select select = new Select(dropDownMenu);
 
         // 3- Dropdown'da var olan option'lardan istedigimiz bir taneyi secelim
 
@@ -57,12 +55,12 @@ public class C04_DropDownMenu {
         // select.selectByValue("search-alias=stripbooks-intl-ship");
 
         // arama kutusuna Java yazdiralim
-        WebElement aramaKutusu= driver.findElement(By.id("twotabsearchtextbox"));
+        WebElement aramaKutusu = driver.findElement(By.id("twotabsearchtextbox"));
         aramaKutusu.sendKeys("Java" + Keys.ENTER);
 
-        WebElement sonucYazisiElementi=driver.findElement(By.xpath("(//div[@class='a-section a-spacing-small a-spacing-top-small'])[1]"));
-        String sonucYazisiStr=sonucYazisiElementi.getText();
-        String arananKelime="Java";
+        WebElement sonucYazisiElementi = driver.findElement(By.xpath("(//div[@class='a-section a-spacing-small a-spacing-top-small'])[1]"));
+        String sonucYazisiStr = sonucYazisiElementi.getText();
+        String arananKelime = "Java";
 
         Assert.assertTrue(sonucYazisiStr.contains(arananKelime));
 

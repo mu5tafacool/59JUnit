@@ -16,30 +16,31 @@ public class C03_Assertions {
 
 
     WebDriver driver;
+
     @Before
-    public void setUp(){
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
-        driver=new ChromeDriver();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
 
     @After
-    public void tearDown(){
+    public void tearDown() {
         driver.close();
     }
 
     @Test
-    public void test01(){
+    public void test01() {
         //http://automationpractice.com/index.php sayfasina gidelim
         driver.get("http://automationpractice.com/index.php");
         //Sign in butonuna basalim
         driver.findElement(By.xpath("//a[@class='login']")).click();
         //Email kutusuna @isareti olmayan bir mail yazip enter’a bastigimizda
         //   “Invalid email address” uyarisi ciktigini test edelim
-        WebElement mailKutusu= driver.findElement(By.xpath("//input[@id='email_create']"));
+        WebElement mailKutusu = driver.findElement(By.xpath("//input[@id='email_create']"));
         mailKutusu.sendKeys("mehmetgmail.com" + Keys.ENTER);
-        WebElement uyariYazisiElementi= driver.findElement(By.xpath("//*[text()='Invalid email address.']"));
+        WebElement uyariYazisiElementi = driver.findElement(By.xpath("//*[text()='Invalid email address.']"));
         Assert.assertTrue(uyariYazisiElementi.isDisplayed());
 
     }

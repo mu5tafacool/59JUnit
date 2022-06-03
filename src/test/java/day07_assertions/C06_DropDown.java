@@ -19,26 +19,26 @@ public class C06_DropDown {
     WebDriver driver;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
-        driver=new ChromeDriver();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
     }
 
     @After
-    public void tearDown(){
+    public void tearDown() {
         // driver.quit();
     }
 
     @Test
-    public void test01(){
+    public void test01() {
         // ● https://the-internet.herokuapp.com/dropdown adresine gidin.
         driver.get("https://the-internet.herokuapp.com/dropdown");
         //	1.Index kullanarak Seçenek 1’i (Option 1) seçin ve yazdırın
-        WebElement ddm= driver.findElement(By.xpath("//select[@id='dropdown']"));
-        Select select=new Select(ddm);
+        WebElement ddm = driver.findElement(By.xpath("//select[@id='dropdown']"));
+        Select select = new Select(ddm);
         select.selectByIndex(1);
         System.out.println(select.getFirstSelectedOption().getText());
 
@@ -51,17 +51,17 @@ public class C06_DropDown {
         System.out.println(select.getFirstSelectedOption().getText());
 
         //	4.Tüm dropdown options'i yazdırın
-        List<WebElement> tumOpsiyonlar= select.getOptions();
-        for (WebElement each: tumOpsiyonlar
-             ) {
+        List<WebElement> tumOpsiyonlar = select.getOptions();
+        for (WebElement each : tumOpsiyonlar
+        ) {
             System.out.println(each.getText());
         }
 
         //	5. Dropdown’un boyutunu bulun, Dropdown’da 4 öğe varsa konsolda True ,
         //	degilse False yazdırın.
 
-        int dropdownBoyut= tumOpsiyonlar.size();
-        if (dropdownBoyut==4){
+        int dropdownBoyut = tumOpsiyonlar.size();
+        if (dropdownBoyut == 4) {
             System.out.println("true");
         } else {
             System.out.println("false");

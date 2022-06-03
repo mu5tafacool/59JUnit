@@ -21,40 +21,42 @@ public class C01_Assertions {
     3- sol ust kosede amazon logosunun gorundugunu test edin
      */
     static WebDriver driver;
+
     @BeforeClass
-    public static void setUp(){
+    public static void setUp() {
         WebDriverManager.chromedriver().setup();
-        driver=new ChromeDriver();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.get("https://www.amazon.com");
     }
 
     @AfterClass
-    public static void tearDown(){
+    public static void tearDown() {
         driver.close();
     }
 
     @Test
-    public void test01(){
+    public void test01() {
 
         // 1- Url'in amazon icerdigini test edin
-        String arananKelime="amazon";
-        String actualUrl= driver.getCurrentUrl();
+        String arananKelime = "amazon";
+        String actualUrl = driver.getCurrentUrl();
         Assert.assertTrue(actualUrl.contains(arananKelime));
     }
+
     @Test
-    public void test02(){
-       // 2- title'in facebook icermedigini test edin
-        String istenmeyenKelime="facebook";
-        String actualTitle=driver.getTitle();
+    public void test02() {
+        // 2- title'in facebook icermedigini test edin
+        String istenmeyenKelime = "facebook";
+        String actualTitle = driver.getTitle();
         Assert.assertFalse(actualTitle.contains(istenmeyenKelime));
     }
 
     @Test
-    public void test03(){
+    public void test03() {
         // 3- sol ust kosede amazon logosunun gorundugunu test edin
-        WebElement logoElementi= driver.findElement(By.id("nav-logo-sprites"));
+        WebElement logoElementi = driver.findElement(By.id("nav-logo-sprites"));
         Assert.assertTrue(logoElementi.isDisplayed());
     }
 }
