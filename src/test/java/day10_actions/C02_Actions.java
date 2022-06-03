@@ -13,8 +13,8 @@ public class C02_Actions extends TestBase {
         // amazon anasayfa'ya gidip
         // account menusunden create a list linkine tiklayalim
         driver.get("https://www.amazon.com");
-        Actions actions=new Actions(driver);
-        WebElement accountLinki= driver.findElement(By.xpath("//*[text()='Account & Lists']"));
+        Actions actions = new Actions(driver);
+        WebElement accountLinki = driver.findElement(By.xpath("//*[text()='Account & Lists']"));
         actions.moveToElement(accountLinki).perform();
 
         driver.findElement(By.xpath("//*[text()='Create a List']")).click();
