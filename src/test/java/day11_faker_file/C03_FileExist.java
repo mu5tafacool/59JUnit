@@ -28,7 +28,7 @@ public class C03_FileExist {
 
         // Masa ustumuzdeki text dosyasinin varligini test edin
         // "C:\Users\Lenovo\Desktop\text.txt"
-        String dosyaYolu= System.getProperty("user.home")+ "\\Desktop\\text.txt";
+        String dosyaYolu = System.getProperty("user.home") + "\\Desktop\\text.txt";
         System.out.println(dosyaYolu);
 
         /*
@@ -42,13 +42,13 @@ public class C03_FileExist {
         Bunun icin
          her bilgisayarin birbirinden farkli olan yolunu bulmak icin
          */
-         String farkliKisim= System.getProperty("user.home");
+        String farkliKisim = System.getProperty("user.home");
 
-         // herkesin bilgisayarinda ortak olan kisim ise
-         String ortakKisim="\\Desktop\\text.txt";
-         // mac icin   "/Desktop/text"
+        // herkesin bilgisayarinda ortak olan kisim ise
+        String ortakKisim = "\\Desktop\\text.txt";
+        // mac icin   "/Desktop/text"
 
-         String masaustuDosyaYolu=farkliKisim+ortakKisim ;
+        String masaustuDosyaYolu = farkliKisim + ortakKisim;
 
         Assert.assertTrue(Files.exists(Paths.get(masaustuDosyaYolu)));
 
