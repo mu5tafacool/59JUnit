@@ -18,28 +18,19 @@ public class C04_FileDownload extends TestBase {
         //2. https://the-internet.herokuapp.com/download adresine gidelim.
         driver.get("https://the-internet.herokuapp.com/download");
         //3. dummy.txt dosyasını indirelim
-        WebElement dummyLinki= driver.findElement(By.xpath("//a[text()='dummy.txt']"));
+        WebElement dummyLinki = driver.findElement(By.xpath("//a[text()='dummy.txt']"));
         dummyLinki.click();
         Thread.sleep(5000);
         //4. dosyanın başarıyla indirilip indirilmediğini test edelim
         // dosya downloads'a indirilecektir, bize downloads'un dosya yolu lazim
 
-        String farkliKisim= System.getProperty("user.home");
+        String farkliKisim = System.getProperty("user.home");
         String ortakKisim = "\\Downloads\\dummy.txt";
 
-        String arananDosyaYolu= farkliKisim+ortakKisim;
+        String arananDosyaYolu = farkliKisim + ortakKisim;
 
         // geriye o dosya yolundaki dosyanin var oldugunu assert edelim
         Assert.assertTrue(Files.exists(Paths.get(arananDosyaYolu)));
-
-
-
-
-
-
-
-
-
 
 
     }
