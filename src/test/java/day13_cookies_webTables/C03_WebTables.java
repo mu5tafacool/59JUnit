@@ -7,6 +7,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import utilities.TestBase;
+
 public class C03_WebTables extends TestBase {
     @Test
     public void dinamikYazici() {
@@ -15,13 +16,14 @@ public class C03_WebTables extends TestBase {
         // input olarak verilen satir sayisi ve sutun sayisi'na sahip
         // cell'deki text'i yazdirin
 
-        int satir=3;
-        int sutun=3;
+        int satir = 3;
+        int sutun = 3;
         girisYap();
-        WebElement arananCell=
-                driver.findElement(By.xpath("//tbody//tr["+satir+"]//td["+sutun+"]"));
+        WebElement arananCell =
+                driver.findElement(By.xpath("//tbody//tr[" + satir + "]//td[" + sutun + "]"));
         System.out.println(arananCell.getText());
     }
+
     public void girisYap() {
         driver.get("https://www.hotelmycamp.com");
         driver.findElement(By.linkText("Log in")).click();
