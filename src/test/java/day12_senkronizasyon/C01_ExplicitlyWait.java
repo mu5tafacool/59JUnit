@@ -22,12 +22,12 @@ public class C01_ExplicitlyWait extends TestBase {
         //4. Remove butonuna basin.
         driver.findElement(By.xpath("//button[@onclick='swapCheckbox()']")).click();
         //5. “It’s gone!” mesajinin goruntulendigini dogrulayin.
-        WebElement itsGoneYaziElementi= driver.findElement(By.xpath("//p[text()=\"It's gone!\"]"));
+        WebElement itsGoneYaziElementi = driver.findElement(By.xpath("//p[text()=\"It's gone!\"]"));
         Assert.assertTrue(itsGoneYaziElementi.isDisplayed());
         //6. Add buttonuna basin
         driver.findElement(By.xpath("//button[text()=\"Add\"]")).click();
         //7. It’s back mesajinin gorundugunu test edin
-        WebElement itsBackElementi= driver.findElement(By.xpath("//p[text()=\"It's back!\"]"));
+        WebElement itsBackElementi = driver.findElement(By.xpath("//p[text()=\"It's back!\"]"));
         Assert.assertTrue(itsBackElementi.isDisplayed());
     }
 
@@ -38,7 +38,7 @@ public class C01_ExplicitlyWait extends TestBase {
         //4. Remove butonuna basin.
         driver.findElement(By.xpath("//button[@onclick='swapCheckbox()']")).click();
         //5. “It’s gone!” mesajinin goruntulendigini dogrulayin.
-        WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(15));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         /*
         WebElement itsGoneYaziElementi= driver.findElement(By.xpath("//p[text()=\"It's gone!\"]"));
         wait.until(ExpectedConditions.visibilityOf(itsGoneYaziElementi));
@@ -50,8 +50,8 @@ public class C01_ExplicitlyWait extends TestBase {
         Bu durumda bekleme islemi ve locate'i birlikte yapmaliyiz
         */
 
-        WebElement itsGoneYaziElementi=wait.until(ExpectedConditions.
-                                        visibilityOfElementLocated(By.xpath("//p[text()=\"It's gone!\"]")));
+        WebElement itsGoneYaziElementi = wait.until(ExpectedConditions.
+                visibilityOfElementLocated(By.xpath("//p[text()=\"It's gone!\"]")));
         Assert.assertTrue(itsGoneYaziElementi.isDisplayed());
 
         //6. Add buttonuna basin
@@ -59,7 +59,7 @@ public class C01_ExplicitlyWait extends TestBase {
 
         //7. It’s back mesajinin gorundugunu test edin
 
-        WebElement itsBackElementi=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[text()=\"It's back!\"]")));
+        WebElement itsBackElementi = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[text()=\"It's back!\"]")));
 
         Assert.assertTrue(itsBackElementi.isDisplayed());
     }
