@@ -70,4 +70,6 @@ public class C04_Homework extends TestBase {
         WebElement istenenHucre = driver.findElement(By.xpath("(//div[@class='rt-tr-group'][" + satir + "]//div[@class='rt-td'])[" + sutun + "]"));
         System.out.print(istenenHucre.getText());
     }
+
+
 }
