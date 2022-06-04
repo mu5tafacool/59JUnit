@@ -19,11 +19,11 @@ public class C06_KeyboardActions extends TestBase {
         // isim kutusunu locate edip,
 
 
-        WebElement isimKutusu= driver.findElement(By.xpath("//input[@name='firstname']"));
+        WebElement isimKutusu = driver.findElement(By.xpath("//input[@name='firstname']"));
         // geriye kalan alanlari TAB ile dolasarak
         // formu doldurun
 
-        Actions actions= new Actions(driver);
+        Actions actions = new Actions(driver);
 
         actions.click(isimKutusu)
                 .sendKeys("Taha")

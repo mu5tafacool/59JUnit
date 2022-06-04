@@ -23,7 +23,7 @@ public class C05_KeyboardActions extends TestBase {
         actions.click(aramaKutusu)
                 .keyDown(Keys.SHIFT)
                 .sendKeys("n")
-                .keyUp(Keys.SHIFT)
+                .keyUp(Keys.SHIFT) //tusu kaldirmak keyup
                 .sendKeys("u")
                 .sendKeys("t")
                 .sendKeys("e")
