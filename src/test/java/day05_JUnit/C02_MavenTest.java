@@ -12,7 +12,7 @@ public class C02_MavenTest {
     public static void main(String[] args) {
 
         WebDriverManager.chromedriver().setup();
-        WebDriver driver= new ChromeDriver();
+        WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
@@ -37,9 +37,9 @@ public class C02_MavenTest {
         //9. Pay buttonuna tiklayin
         driver.findElement(By.id("pay_saved_payees")).click();
         //10. “The payment was successfully submitted.” mesajinin ciktigini kontrol edin
-        WebElement sonucYazisiElementi= driver.findElement(By.xpath("//div[@id='alert_content']"));
+        WebElement sonucYazisiElementi = driver.findElement(By.xpath("//div[@id='alert_content']"));
 
-        if (sonucYazisiElementi.isDisplayed()){
+        if (sonucYazisiElementi.isDisplayed()) {
             System.out.println("test PASSED");
         } else {
             System.out.println("test FAILED");
