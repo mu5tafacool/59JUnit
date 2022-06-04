@@ -8,7 +8,7 @@ import java.time.Duration;
 
 public class C01_MavenIlkClass {
     public static void main(String[] args) {
-
+//bonigarcia setup
         WebDriverManager.chromedriver().setup();
         WebDriver driver= new ChromeDriver();
         driver.manage().window().maximize();
