@@ -16,19 +16,44 @@ public class C02_Actions extends TestBase {
         //2- https://html.com/tags/iframe/ sayfasina gidelim
         driver.get("https://html.com/tags/iframe/");
         //3- video’yu gorecek kadar asagi inin
-        Actions actions=new Actions(driver);
+        Actions actions = new Actions(driver);
         actions.sendKeys(Keys.PAGE_DOWN)
                 .sendKeys(Keys.PAGE_DOWN)
                 .perform();
         //4- videoyu izlemek icin Play tusuna basin
-        WebElement iframe=driver.findElement(By.xpath("//iframe[@src='https://www.youtube.com/embed/owsfdh4gxyc']"));
+        WebElement iframe = driver.findElement(By.xpath("//iframe[@src='https://www.youtube.com/embed/owsfdh4gxyc']"));
         driver.switchTo().frame(iframe);
         driver.findElement(By.xpath("//button[@class='ytp-large-play-button ytp-button']")).click();
         //5- videoyu calistirdiginizi test edin
         Thread.sleep(1000);
-        WebElement youTubeLinki= driver.findElement(By.xpath("//a[@class='ytp-youtube-button ytp-button yt-uix-sessionlink']"));
+        WebElement youTubeLinki = driver.findElement(By.xpath("//a[@class='ytp-youtube-button ytp-button yt-uix-sessionlink']"));
 
         Assert.assertTrue(youTubeLinki.isDisplayed());
 
+    }
+
+    @Test
+    public void Test01() throws InterruptedException {
+        //1- Bir Class olusturalim KeyboardActions2
+        //2- https://html.com/tags/iframe/ sayfasina gidelim
+        driver.get("https://html.com/tags/iframe/");
+        //3- video’yu gorecek kadar asagi inin
+        Actions actions = new Actions(driver);
+        actions.sendKeys(Keys.PAGE_DOWN)
+                .sendKeys(Keys.PAGE_DOWN)
+                .perform();
+        //4- videoyu izlemek icin Play tusuna basin
+        WebElement iframe = driver.findElement(By.xpath("//iframe[@src='https://www.youtube.com/embed/owsfdh4gxyc']"));
+        driver.switchTo().frame(iframe);
+        driver.findElement(By.xpath("//button[@class='ytp-large-play-button ytp-button']")).click();
+
+        Thread.sleep(3000);
+        actions
+                .sendKeys("k")
+                .sendKeys(Keys.ARROW_LEFT)
+                .sendKeys(Keys.ARROW_LEFT)
+                .sendKeys("k")
+                .perform();
+        Thread.sleep(3000);
     }
 }
