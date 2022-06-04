@@ -16,16 +16,17 @@ public class C04_Actions extends TestBase {
         //1- https://demoqa.com/droppable adresine gidelim
         driver.get("https://demoqa.com/droppable");
         //2- “Drag me” butonunu tutup “Drop here” kutusunun ustune birakalim
-        Actions actions= new Actions(driver);
-        WebElement tasinacakElement=driver.findElement(By.xpath("//div[@id='draggable']"));
-        WebElement hedefElement= driver.findElement(By.xpath("(//div[@id='droppable'])[1]"));
-        actions.dragAndDrop(tasinacakElement,hedefElement).perform();
+        Actions actions = new Actions(driver);
+        WebElement tasinacakElement = driver.findElement(By.xpath("//div[@id='draggable']"));
+        WebElement hedefElement = driver.findElement(By.xpath("(//div[@id='droppable'])[1]"));
+        actions.dragAndDrop(tasinacakElement, hedefElement).perform();
         //3- “Drop here” yazisi yerine “Dropped!” oldugunu test edin
-        WebElement sonucYaziElementi= driver.findElement(By.xpath("//*[text()='Dropped!']"));
+        WebElement sonucYaziElementi = driver.findElement(By.xpath("//*[text()='Dropped!']"));
 
-        String expectedYazi="Dropped!";
-        String actualYazi=sonucYaziElementi.getText();
-        Assert.assertEquals(expectedYazi,actualYazi);
+        String expectedYazi = "Dropped!";
+        String actualYazi = sonucYaziElementi.getText();
+        Assert.assertEquals(expectedYazi, actualYazi);
         Thread.sleep(5000);
+
     }
 }
