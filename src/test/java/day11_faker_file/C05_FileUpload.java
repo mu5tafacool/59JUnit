@@ -23,13 +23,13 @@ public class C05_FileUpload extends TestBase {
          */
 
         // 1.adim cjhoose file butonunu locate edelim
-        WebElement dosyaSecButonu= driver.findElement(By.id("file-upload"));
+        WebElement dosyaSecButonu = driver.findElement(By.id("file-upload"));
         // 2.adim yuklenecek doyanin dosya yolunu olusturalim
         //   biz masaustundeki text.txt dosyasini yukleyelim
 
-        String farkliKisim=System.getProperty("user.home");
-        String ortakKisim= "\\Desktop\\text.txt";
-        String yuklenecekDosya= farkliKisim+ortakKisim;
+        String farkliKisim = System.getProperty("user.home");
+        String ortakKisim = "\\Desktop\\text.txt";
+        String yuklenecekDosya = farkliKisim + ortakKisim;
 
         // 3. adim sendKeys ile dosya yolunu, secme butonuna yollayalim
         dosyaSecButonu.sendKeys(yuklenecekDosya);
@@ -38,7 +38,7 @@ public class C05_FileUpload extends TestBase {
         driver.findElement(By.xpath("//input[@id=\"file-submit\"]")).click();
         //“File Uploaded!” textinin goruntulendigini test edelim.
 
-        WebElement yaziElementi= driver.findElement(By.tagName("h3"));
+        WebElement yaziElementi = driver.findElement(By.tagName("h3"));
         Assert.assertTrue(yaziElementi.isDisplayed());
 
         Thread.sleep(5000);
