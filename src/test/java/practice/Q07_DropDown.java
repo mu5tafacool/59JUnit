@@ -21,7 +21,7 @@ public class Q07_DropDown extends TestBase {
 
 
     @Test
-    public void test(){
+    public void test() {
         // go to url : https://www.jqueryscript.net/demo/Drop-Down-Combo-Tree/
         driver.get("https://www.jqueryscript.net/demo/Drop-Down-Combo-Tree/");
 
@@ -32,7 +32,7 @@ public class Q07_DropDown extends TestBase {
         List<WebElement> dropList = driver.findElements(By.xpath("//span[@class ='comboTreeItemTitle']"));
 
         //-->Task3 printout DropDown Elements' number
-        System.out.println("dropListteki elementlerin sayisi :" +dropList.size()); //dropListteki elementlerin sayisi :45
+        System.out.println("dropListteki elementlerin sayisi :" + dropList.size()); //dropListteki elementlerin sayisi :45
 
         System.out.println("********");
 
@@ -42,7 +42,7 @@ public class Q07_DropDown extends TestBase {
             String text = dropList.get(i).getText();
             System.out.println("text = " + text);
 
-            if(text.equals("choice 6")){
+            if (text.equals("choice 6")) {
                 dropList.get(i).click();
                 break;
             }
