@@ -17,31 +17,31 @@ public class Q09_Alert extends TestBase {
     //    finally print on console this message "Hello TechproEducation How are you today"
     //    aseertion these message
 
-@Test
+    @Test
     public void test() throws InterruptedException {
-    driver.get("http://demo.automationtesting.in/Alerts.html");
+        driver.get("http://demo.automationtesting.in/Alerts.html");
 
-    driver.findElement(By.xpath("(//a[@class='analystic'])[1]")).click();
-    driver.findElement(By.xpath("//button[@class='btn btn-danger']")).click();
-    System.out.println(driver.switchTo().alert().getText());
-    driver.switchTo().alert().accept();
+        driver.findElement(By.xpath("(//a[@class='analystic'])[1]")).click();
+        driver.findElement(By.xpath("//button[@class='btn btn-danger']")).click();
+        System.out.println(driver.switchTo().alert().getText());
+        driver.switchTo().alert().accept();
 
-    driver.findElement(By.xpath("//*[text()='Alert with OK & Cancel ']")).click();
-    driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
-    System.out.println(driver.switchTo().alert().getText());
-    driver.switchTo().alert().dismiss();
+        driver.findElement(By.xpath("//*[text()='Alert with OK & Cancel ']")).click();
+        driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
+        System.out.println(driver.switchTo().alert().getText());
+        driver.switchTo().alert().dismiss();
 
-    driver.findElement(By.xpath("(//a[@class='analystic'])[3]")).click();
-    driver.findElement(By.xpath("//button[@class='btn btn-info']")).click();
+        driver.findElement(By.xpath("(//a[@class='analystic'])[3]")).click();
+        driver.findElement(By.xpath("//button[@class='btn btn-info']")).click();
 
-    Thread.sleep(2000);
-    driver.switchTo().alert().sendKeys("TechProEducation");
-    driver.switchTo().alert().accept();
+        Thread.sleep(2000); //Please enter your name
+        driver.switchTo().alert().sendKeys("TechProEducation");
+        driver.switchTo().alert().accept();
 
-    String expectedMsj = "Hello TechProEducation How are you today";
-    String actualMsj = driver.findElement(By.xpath("//p[@id='demo1']")).getText();
+        String expectedMsj = "Hello TechProEducation How are you today";
+        String actualMsj = driver.findElement(By.xpath("//p[@id='demo1']")).getText();
 
-    Assert.assertEquals(expectedMsj, actualMsj);
-}
+        Assert.assertEquals(expectedMsj, actualMsj);
+    }
 
 }
