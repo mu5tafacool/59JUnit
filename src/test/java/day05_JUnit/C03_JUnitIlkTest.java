@@ -12,7 +12,7 @@ public class C03_JUnitIlkTest {
 
 
     @Test
-    public void method1(){
+    public void method1() {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -22,7 +22,7 @@ public class C03_JUnitIlkTest {
     }
 
     @Test
-    public void method2(){
+    public void method2() {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -32,7 +32,7 @@ public class C03_JUnitIlkTest {
     }
 
     @Test
-    public void method3(){
+    public void method3() {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
