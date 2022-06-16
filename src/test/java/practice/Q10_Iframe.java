@@ -5,9 +5,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utilities.TestBase;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Q10_Iframe extends TestBase {
       /*
@@ -30,9 +32,9 @@ public class Q10_Iframe extends TestBase {
         secondEmoji.click();
 
         List<WebElement> emojiOgeler = driver.findElements(By.xpath("//div[@id='nature']//div//img"));
-       // emojiOgeler.stream().forEach(x-> x.click());
+        // emojiOgeler.stream().forEach(x-> x.click());
 
-        for(WebElement each : emojiOgeler){
+        for (WebElement each : emojiOgeler) {
             each.click();
         }
 
@@ -43,15 +45,38 @@ public class Q10_Iframe extends TestBase {
 
         List<WebElement> textList = driver.findElements(By.xpath("//input[@class='mdl-textfield__input']"));
 
-        List<String> text = new ArrayList<>(Arrays.asList("Bir", "iframe" , "sorusu", "bu", "kadar", "eglenceli", "olabilir","sizce de ", "oyle degil mi ?", "",""));
+        List<String> text = new ArrayList<>(Arrays.asList("Bir", "iframe", "sorusu", "bu", "kadar", "eglenceli", "olabilir", "sizce de ", "oyle degil mi ?", "", ""));
 
-        for (int i=0; i< textList.size();i++){
+        for (int i = 0; i < textList.size(); i++) {
             textList.get(i).sendKeys(text.get(i));
         }
-
-
         Thread.sleep(3000);
+        driver.findElement(By.xpath("//button[@id='send']")).click();
+    }
 
+    @Test
+    public void test02() throws InterruptedException {
+        driver.get("https://www.jqueryscript.net/demo/Easy-iFrame-based-Twitter-Emoji-Picker-Plugin-jQuery-Emoojis/");
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        WebElement iframe = driver.findElement(By.xpath("//iframe[@id ='emoojis']"));
+        driver.switchTo().frame(iframe);
+        // ikinci emojiye tıklayın
+        WebElement secondEmoji = driver.findElement(By.xpath("(//span[@class='mdl-tabs__ripple-container mdl-js-ripple-effect'])[2]"));
+        secondEmoji.click();
+        List<WebElement> emojiList = driver.findElements(By.xpath("//div[@id='nature']//div//img"));
+        emojiList.stream().forEach(t -> t.click()); //lambda ile foreach tiklama
+        // tüm ikinci emoji öğelerini tıklayın
+        Thread.sleep(1500);
+        // parent iframe e geri donun
+        driver.switchTo().parentFrame();
+        // formu doldurun,(Formu istediğiniz metinlerle doldurun)
+        List<WebElement> textList = driver.findElements(By.xpath("//input[@class='mdl-textfield__input']"));
+        List<String> list = new ArrayList<>(Arrays.asList("a", "a", "a", "b", "a", "a", "a", "s"));
+        textList.stream().forEach(x->x.sendKeys("a"));
+
+        Thread.sleep(2500);
+        //  apply button a basin
         driver.findElement(By.xpath("//button[@id='send']")).click();
     }
 }
