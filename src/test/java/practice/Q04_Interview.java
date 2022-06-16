@@ -69,9 +69,9 @@ public class Q04_Interview {
         driver.findElement(By.xpath("//button[@id ='addToCartButton']")).click();
 
         driver.findElement(By.xpath("//a[@class ='btn btn-secondary']")).click();
-        System.out.println("siparis ozeti yazisi :" +  driver.findElement(By.xpath("//div[@class= 'cart-sum-title']")).getText());
+        System.out.println("siparis ozeti yazisi :" + driver.findElement(By.xpath("//div[@class= 'cart-sum-title']")).getText());
         driver.findElement(By.xpath("//span[.= 'Alışverişi Tamamla']")).click();
-        System.out.println("hosgeldiniz yazisi :" +driver.findElement(By.xpath("//div[text()= 'Teknosa’ya hoş geldiniz']")).getText());
+        System.out.println("hosgeldiniz yazisi :" + driver.findElement(By.xpath("//div[text()= 'Teknosa’ya hoş geldiniz']")).getText());
 
 
     }
