@@ -33,7 +33,8 @@ public class WebTables_StudentSession extends TestBase {
         }
         departmentIndex++;
 
-        List <WebElement> departmentsList = driver.findElements(By.xpath("//div[@class='rt-tbody']//div[@class='rt-td']["+departmentIndex+"]"));
+        List <WebElement> departmentsList = driver.findElements(By
+                .xpath("//div[@class='rt-tbody']//div[@class='rt-td']["+departmentIndex+"]"));
         departmentsList.
                 stream().
                 filter(t->!(t.getText().equals(" "))).
@@ -45,7 +46,7 @@ public class WebTables_StudentSession extends TestBase {
         System.out.println(headersList.get(2).getText());
 
         //  4. Tablodaki tum datalari yazdirin
-        // //div[@class = 'rt-tbody']
+        // css //div[@class = 'rt-tbody']
         System.out.println("TASK4");
         System.out.println("--------");
         WebElement tumtable = driver.findElement(By.xpath("//div[@class='rt-tbody']"));
@@ -100,8 +101,18 @@ public class WebTables_StudentSession extends TestBase {
         hucreYazdir(satir, sutun);
     }
 
-    private void hucreYazdir(int satir, int sutun) {
+    private void hucreYazdir(int satir, int sutun) { //satir ve sutunlari yazdirmak icin method
         WebElement istenenHucre = driver.findElement(By.xpath("//div[@class='rt-tr-group']["+satir+"]//div[@class='rt-td']["+sutun+"]"));
         System.out.println(istenenHucre.getText());
+    }
+
+    @Test
+    public void test02() {
+        //  8. Tablodaki 3.kolonu yazdirin
+
+        driver.get("https://www5.aptest.com/resources.html#app-data");
+        List<WebElement>list3=driver.findElements(By.xpath("(//table[@class='bordered'])[12]//tr//td[2]"));
+        list3.stream().forEach(t->System.out.println(t.getText()));
+
     }
 }
