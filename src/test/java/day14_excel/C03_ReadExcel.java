@@ -4,6 +4,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.junit.Assert;
 import org.junit.Test;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -20,26 +21,26 @@ public class C03_ReadExcel {
         // boylece her seferinde excel'e ulasip satir,sutun vs.. ugrasmayalim
         // Database yapisinda olan excel'i
         // koyabilecegimiz en uygun Java objesi map'dir
-        Map<String,String> ulkelerMap= new HashMap<>();
+        Map<String, String> ulkelerMap = new HashMap<>();
         //7. Dosya yolunu bir String degiskene atayalim
-        String dosyaYolu="src/resources/ulkeler.xlsx";
+        String dosyaYolu = "src/resources/ulkeler.xlsx";
         //8. FileInputStream objesi olusturup,parametre olarak dosya yolunu girelim
-        FileInputStream fis=new FileInputStream(dosyaYolu);
+        FileInputStream fis = new FileInputStream(dosyaYolu);
         //9. Workbook objesi olusturalim,parameter olarak fileInputStream objesini girelim
         //10. WorkbookFactory.create(fileInputStream)
-        Workbook workbook= WorkbookFactory.create(fis);
-        int sonSatirIndex=workbook.getSheet("Sayfa1").getLastRowNum();
-        for (int i = 0; i <=sonSatirIndex ; i++) {
+        Workbook workbook = WorkbookFactory.create(fis);
+        int sonSatirIndex = workbook.getSheet("Sayfa1").getLastRowNum();
+        for (int i = 0; i <= sonSatirIndex; i++) {
             // key i. satirdaki 0 indexindeki data olacak
-            String key= workbook.getSheet("Sayfa1").getRow(i).getCell(0).toString();
+            String key = workbook.getSheet("Sayfa1").getRow(i).getCell(0).toString();
             // value ise i. satirdaki 1,2 ve 3. indexdeki datalarin birlesimi olacak
-            String value= workbook.getSheet("Sayfa1").getRow(i).getCell(1).toString()
-                    +", "
-                    +workbook.getSheet("Sayfa1").getRow(i).getCell(2).toString()
-                    +", "
-                    +workbook.getSheet("Sayfa1").getRow(i).getCell(3).toString();
-            ulkelerMap.put(key,value);
-            System.out.println(key+ " , " + value);
+            String value = workbook.getSheet("Sayfa1").getRow(i).getCell(1).toString()
+                    + ", "
+                    + workbook.getSheet("Sayfa1").getRow(i).getCell(2).toString()
+                    + ", "
+                    + workbook.getSheet("Sayfa1").getRow(i).getCell(3).toString();
+            ulkelerMap.put(key, value);
+            System.out.println(key + " , " + value);
         }
         System.out.println(ulkelerMap);
         // Listede Ghana oldugunu test edelim
@@ -47,11 +48,11 @@ public class C03_ReadExcel {
     }
 
     public static String banaDataGetir(int satirIndex, int sutunIndex) throws IOException {
-        String istenenData="";
-        String dosyaYolu="src/resources/ulkeler.xlsx";
-        FileInputStream fis=new FileInputStream(dosyaYolu);
-        Workbook workbook= WorkbookFactory.create(fis);
-        istenenData=workbook
+        String istenenData = "";
+        String dosyaYolu = "src/resources/ulkeler.xlsx";
+        FileInputStream fis = new FileInputStream(dosyaYolu);
+        Workbook workbook = WorkbookFactory.create(fis);
+        istenenData = workbook
                 .getSheet("Sayfa1")
                 .getRow(satirIndex)
                 .getCell(sutunIndex)
