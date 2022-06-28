@@ -3,6 +3,7 @@ package day14_excel;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.junit.Test;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Arrays;
@@ -46,7 +47,7 @@ public class C08_ReadExcel_Map {
             ulkelerMap.put(i, values);
         }
 
-        for (Integer each:ulkelerMap.keySet()) {
+        for (Integer each : ulkelerMap.keySet()) {
             String[] valuesArray = ulkelerMap.get(each).split(",");
             System.out.print(each + " : ");
             System.out.print(Arrays.deepToString(valuesArray));
@@ -55,7 +56,7 @@ public class C08_ReadExcel_Map {
 
         //Afganistan'ın Türkçe başkent ismi nedir ?
 
-        for (String each:ulkelerMap.values()) {
+        for (String each : ulkelerMap.values()) {
             String[] valuesArray = each.split(",");
             if (valuesArray[0].equals("Afghanistan")) {
                 System.out.println("Türkçe Başkenti: " + valuesArray[3]);
