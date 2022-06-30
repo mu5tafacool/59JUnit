@@ -73,7 +73,7 @@ public class Q10_Iframe extends TestBase {
         // formu doldurun,(Formu istediğiniz metinlerle doldurun)
         List<WebElement> textList = driver.findElements(By.xpath("//input[@class='mdl-textfield__input']"));
         List<String> list = new ArrayList<>(Arrays.asList("a", "a", "a", "b", "a", "a", "a", "s"));
-        textList.stream().forEach(x->x.sendKeys("a"));
+        textList.stream().forEach(x -> x.sendKeys("a"));
 
         Thread.sleep(2500);
         //  apply button a basin
