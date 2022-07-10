@@ -5,12 +5,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import utilities.TestBase;
+
 import java.util.List;
 
 public class WebTables_StudentSession extends TestBase {
 
     @Test
-    public void webTableTest(){
+    public void webTableTest() {
         //Bir Class olusturun D19_WebtablesHomework
 
         //  1. “https://demoqa.com/webtables” sayfasina gidin
@@ -22,7 +23,7 @@ public class WebTables_StudentSession extends TestBase {
         //div[@class = 'rt-tr-group']//div[@class='rt-td'][6]
         System.out.println("TASK2");
         System.out.println("--------");
-        List <WebElement> headersList = driver.findElements(By.xpath("//div[@class='rt-resizable-header-content']"));
+        List<WebElement> headersList = driver.findElements(By.xpath("//div[@class='rt-resizable-header-content']"));
         //headersList.stream().forEach(t->System.out.println(t.getText()));
 
         int departmentIndex = 0;
@@ -33,12 +34,12 @@ public class WebTables_StudentSession extends TestBase {
         }
         departmentIndex++;
 
-        List <WebElement> departmentsList = driver.findElements(By
-                .xpath("//div[@class='rt-tbody']//div[@class='rt-td']["+departmentIndex+"]"));
+        List<WebElement> departmentsList = driver.findElements(By
+                .xpath("//div[@class='rt-tbody']//div[@class='rt-td'][" + departmentIndex + "]"));
         departmentsList.
                 stream().
-                filter(t->!(t.getText().equals(" "))).
-                forEach(t->System.out.println(t.getText()));
+                filter(t -> !(t.getText().equals(" "))).
+                forEach(t -> System.out.println(t.getText()));
 
         //  3. 3. sutunun basligini yazdirin
         System.out.println("TASK3");
@@ -75,10 +76,10 @@ public class WebTables_StudentSession extends TestBase {
         //div[@class = 'rt-tr-group']//div[@class='rt-td'][3]
         System.out.println("TASK8");
         System.out.println("--------");
-        List <WebElement> kolon3 = driver.findElements(By.xpath("//div[@class='rt-tr-group']//div[@class='rt-td'][3]"));
+        List<WebElement> kolon3 = driver.findElements(By.xpath("//div[@class='rt-tr-group']//div[@class='rt-td'][3]"));
         kolon3.
                 stream().
-                forEach(t->System.out.println(t.getText()));
+                forEach(t -> System.out.println(t.getText()));
 
         ////  9. Tabloda "First Name" i Kierra olan kisinin Salary'sini yazdirin
         //div[@class = 'rt-tr-group']//div[@class='rt-td'][1]
@@ -102,17 +103,19 @@ public class WebTables_StudentSession extends TestBase {
     }
 
     private void hucreYazdir(int satir, int sutun) { //satir ve sutunlari yazdirmak icin method
-        WebElement istenenHucre = driver.findElement(By.xpath("//div[@class='rt-tr-group']["+satir+"]//div[@class='rt-td']["+sutun+"]"));
+        WebElement istenenHucre = driver.findElement(By.xpath("//div[@class='rt-tr-group'][" + satir + "]//div[@class='rt-td'][" + sutun + "]"));
         System.out.println(istenenHucre.getText());
+
     }
+
 
     @Test
     public void test02() {
         //  8. Tablodaki 3.kolonu yazdirin
 
         driver.get("https://www5.aptest.com/resources.html#app-data");
-        List<WebElement>list3=driver.findElements(By.xpath("(//table[@class='bordered'])[12]//tr//td[2]"));
-        list3.stream().forEach(t->System.out.println(t.getText()));
+        List<WebElement> list3 = driver.findElements(By.xpath("(//table[@class='bordered'])[12]//tr//td[2]"));
+        list3.stream().forEach(t -> System.out.println(t.getText()));
 
     }
 }
